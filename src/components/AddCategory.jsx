@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 
-export const AddCategory = ( {onNewCategory} ) => {
+export const AddCategory = ( { onNewCategory } ) => {
 
     const [inputValue, setInputValue] = useState('');
 
-    const onInputChange = ({target}) => {
+    const onInputChange = ( { target } ) => {
         setInputValue( target.value );
     }
 
@@ -16,7 +17,7 @@ export const AddCategory = ( {onNewCategory} ) => {
     }
 
   return (
-    <form onSubmit={ (event) => onSubmit(event) }>
+    <form onSubmit={ ( event ) => onSubmit( event ) }>
         <input type="text" 
                 placeholder='Buscar gifs'
                 value={ inputValue }
