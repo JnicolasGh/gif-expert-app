@@ -1,7 +1,10 @@
 
 export const getGifs = async( category ) => {
 
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=4TichSITUZxqoMvovjevg97w8FvcGr72&q=${ category }&limit=15`;
+    const api_key = "4TichSITUZxqoMvovjevg97w8FvcGr72&q";
+    let limit = 15;
+    let type = 'gifs';
+    const url = `https://api.giphy.com/v1/${ type }/search?api_key=${ api_key }=${ category }&limit=${ limit }`;
     const resp = await fetch( url );
     const { data = [] } = await resp.json();
     const gifs = data.map( img => ({
